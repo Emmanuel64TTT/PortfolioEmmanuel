@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel BAKABADIO | Portfolio BTS SIO SISR - Technicien Système & Réseaux</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#060b19',
+                            900: '#0b132b',
+                            800: '#131f42',
+                            700: '#1c2d5e',
+                        },
+                        cyber: {
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #060b19;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        .tech-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+        }
+        .glass-card {
+            background: rgba(19, 31, 66, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.45);
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.25);
+        }
+        .glow-text {
+            text-shadow: 0 0 24px rgba(56, 189, 248, 0.35);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060b19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1c2d5e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9;
+        }
+    </style>
+</head>
+<body class="tech-grid antialiased selection:bg-cyber-500 selection:text-white">
+
+    <!-- Navigation fixe -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#accueil" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyber-400 to-blue-600 flex items-center justify-center text-navy-950 font-bold text-lg shadow-lg shadow-cyber-500/20 group-hover:scale-105 transition-transform">
+                        EB
+                    </div>
+                    <div>
+                        <span class="font-bold text-white tracking-tight text-lg block leading-none">Emmanuel BAKABADIO</span>
+                        <span class="font-mono text-xs text-cyber-400">BTS SIO • Option SISR</span>
+                    </div>
+                </a>
+
+                <nav class="hidden lg:flex items-center space-x-1">
+                    <a href="#accueil" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyber-400 hover:bg-navy-800/60 transition">Accueil</a>
+                    <a href="#apropos" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyber-400 hover:bg-navy-800/60 transition">À propos</a>
+                    <a href="#competences" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyber-400 hover:bg-navy-800/60 transition">Compétences</a>
+                    <a href="#certifications" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyber-400 hover:bg-navy-800/60 transition">Certifications</a>
+                    <a href="#projets" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyber-400 hover:bg-navy-800/60 transition">Projet GPO</a>
+                    <a href="#parcours" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyber-400 hover:bg-navy-800/60 transition">Parcours</a>
+                    <a href="#examens" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-cyber-400 hover:bg-navy-800/60 transition">Épreuves E5 / E6</a>
+                    <a href="#contact" class="ml-3 px-4 py-2 rounded-xl text-sm font-semibold bg-cyber-500 hover:bg-cyber-400 text-navy-950 transition shadow-md shadow-cyber-500/20">Contact</a>
+                </nav>
+
+                <button id="mobile-menu-btn" aria-label="Ouvrir le menu" class="lg:hidden p-3 rounded-xl text-slate-300 hover:text-white hover:bg-navy-800 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-900/95 backdrop-blur-xl border-b border-cyber-500/20 px-4 pt-2 pb-6 space-y-1">
+            <a href="#accueil" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyber-400">Accueil</a>
+            <a href="#apropos" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyber-400">À propos</a>
+            <a href="#competences" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyber-400">Compétences</a>
+            <a href="#certifications" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyber-400">Certifications</a>
+            <a href="#projets" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyber-400">Projet GPO</a>
+            <a href="#parcours" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyber-400">Parcours & Expériences</a>
+            <a href="#examens" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-cyber-400">Épreuves E5 / E6 & Stage</a>
+            <a href="#contact" class="mobile-link block px-4 py-3 mt-2 rounded-xl text-base font-semibold bg-cyber-500 text-navy-950 text-center">Me contacter</a>
+        </div>
+    </header>
+
+    <!-- Section 1 : Accueil (Hero) -->
+    <section id="accueil" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+        <div class="absolute top-1/4 -left-32 w-96 h-96 bg-cyber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-navy-800/80 border border-cyber-500/30 text-cyber-400 text-xs sm:text-sm font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>BTS SIO SISR • Technicien Système & Réseaux</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Bonjour, je suis <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-400 via-sky-300 to-blue-500 glow-text">
+                            Emmanuel BAKABADIO
+                        </span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
+                        Passionné par l'administration des systèmes, les infrastructures réseaux et la maintenance informatique. Je conçois, déploie et administre des environnements Windows Server et postes clients performants.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-3 text-sm text-slate-400 font-mono pt-1">
+                        <span class="flex items-center gap-2 bg-navy-900/90 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-cyber-400"></i> Paris 15e, France
+                        </span>
+                        <span class="flex items-center gap-2 bg-navy-900/90 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-server text-cyber-400"></i> Windows Server & Active Directory
+                        </span>
+                        <span class="flex items-center gap-2 bg-navy-900/90 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-shield-halved text-cyber-400"></i> SecNumacadémie (ANSSI)
+                        </span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#projets" class="px-6 py-3.5 rounded-xl bg-cyber-500 hover:bg-cyber-400 text-navy-950 font-bold text-sm sm:text-base transition flex items-center gap-2 shadow-lg shadow-cyber-500/25">
+                            <i class="fa-solid fa-folder-open"></i> Voir mon projet GPO
+                        </a>
+                        <a href="./static/CV%20Alt%20Emmanuel%20BAKABADIO.pdf" download class="px-6 py-3.5 rounded-xl bg-navy-800 hover:bg-navy-700 text-white border border-cyber-500/30 font-semibold text-sm sm:text-base transition flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down text-cyber-400"></i> Télécharger mon CV (PDF)
+                        </a>
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl bg-transparent hover:bg-navy-800/70 text-cyber-400 border border-cyber-400/40 font-semibold text-sm sm:text-base transition flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Me contacter
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <div class="glass-card rounded-3xl p-8 text-center space-y-6 border border-cyber-500/30 relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-32 h-32 bg-cyber-500/10 rounded-full blur-2xl"></div>
+                        <div class="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-cyber-400 to-blue-600 flex items-center justify-center text-navy-950 text-3xl font-extrabold shadow-xl shadow-cyber-500/20">
+                            EB
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Emmanuel BAKABADIO</h3>
+                            <p class="text-cyber-400 text-xs font-mono mt-1">Technicien Système & Réseaux</p>
+                        </div>
+                        <div class="border-t border-slate-800 pt-4 space-y-2 text-xs font-mono text-slate-300 text-left">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Formation :</span>
+                                <span class="text-white">BTS SIO SISR</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Expérience :</span>
+                                <span class="text-white">EF2i</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Statut :</span>
+                                <span class="text-emerald-400">En recherche d'opportunité</span>
+                            </div>
+                        </div>
+                        <button onclick="openDocumentModal('cv')" class="w-full py-3 rounded-xl bg-cyber-500/15 hover:bg-cyber-500/25 border border-cyber-500/40 text-cyber-400 font-semibold text-xs transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-id-card"></i> Voir le CV détaillé
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 : À propos & Formation -->
+    <section id="apropos" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="font-mono text-xs uppercase tracking-widest text-cyber-400 bg-cyber-500/10 px-3 py-1 rounded-full border border-cyber-500/20">Profil & Orientation</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4">À propos de mon parcours SISR</h2>
+                <p class="text-slate-400 mt-3">Administration des systèmes, maintenance informatique et support aux utilisateurs.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 reveal">
+                <div class="lg:col-span-2 glass-card rounded-2xl p-8 space-y-5">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-cyber-500/15 border border-cyber-500/30 flex items-center justify-center text-cyber-400 text-xl">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Technicien Système & Réseaux</h3>
+                            <p class="text-sm text-cyber-400 font-mono">BTS Services Informatiques aux Organisations</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-300 leading-relaxed">
+                        Actuellement en formation <strong class="text-white">BTS SIO option SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</strong>, je développe des compétences solides dans l'installation, le paramétrage et la maintenance d'infrastructures informatiques professionnelles.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        Mon expérience pratique chez <strong class="text-white">EF2i</strong> (administration serveurs et annuaires Active Directory) m'a permis d'acquérir une excellente maîtrise du terrain et des environnements Windows, complétée par une certification en cybersécurité (SecNumacadémie).
+                    </p>
+
+                    <div class="grid sm:grid-cols-3 gap-4 pt-3">
+                        <div class="bg-navy-950/60 p-4 rounded-xl border border-slate-800">
+                            <div class="text-2xl font-bold text-cyber-400">SISR</div>
+                            <div class="text-xs text-slate-400 mt-1">Systèmes & Réseaux</div>
+                        </div>
+                        <div class="bg-navy-950/60 p-4 rounded-xl border border-slate-800">
+                            <div class="text-2xl font-bold text-cyber-400">1 Stage</div>
+                            <div class="text-xs text-slate-400 mt-1">EF2i</div>
+                        </div>
+                        <div class="bg-navy-950/60 p-4 rounded-xl border border-slate-800">
+                            <div class="text-2xl font-bold text-cyber-400">SecNum</div>
+                            <div class="text-xs text-slate-400 mt-1">Certifié ANSSI</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between space-y-6">
+                    <div>
+                        <span class="text-xs font-mono uppercase tracking-wider text-cyber-400">Domaines d'expertise</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Mes compétences clés</h3>
+                        <ul class="mt-5 space-y-4 text-sm text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check-circle text-cyber-400 mt-1"></i>
+                                <span><strong class="text-white">Administration Windows :</strong> Active Directory, GPO, AppLocker, gestion des comptes et permissions.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check-circle text-cyber-400 mt-1"></i>
+                                <span><strong class="text-white">Cybersécurité :</strong> SecNumacadémie (ANSSI) - SSI, authentification, nomadisme[cite: 16].</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check-circle text-cyber-400 mt-1"></i>
+                                <span><strong class="text-white">Support & Helpdesk :</strong> Gestion de parc et tickets sous GLPI.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800">
+                        <a href="#examens" class="text-sm font-semibold text-cyber-400 hover:text-cyber-300 flex items-center justify-between group">
+                            <span>Consulter mes fiches E5 & E6</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 : Compétences Techniques -->
+    <section id="competences" class="py-20 bg-navy-900/40 border-y border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+                <span class="font-mono text-xs uppercase tracking-widest text-cyber-400 bg-cyber-500/10 px-3 py-1 rounded-full border border-cyber-500/20">Stack Technique</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4">Compétences Techniques</h2>
+                <p class="text-slate-400 mt-3">Technologies et domaines maîtrisés dans le cadre de mon cursus et de mes expériences professionnelles.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 reveal" id="skill-filters">
+                <button data-filter="all" class="skill-filter-btn active px-4 py-2.5 rounded-xl text-sm font-semibold bg-cyber-500 text-navy-950 transition">
+                    Toutes les compétences
+                </button>
+                <button data-filter="systemes" class="skill-filter-btn px-4 py-2.5 rounded-xl text-sm font-semibold bg-navy-800 text-slate-300 hover:text-white border border-slate-700 transition">
+                    <i class="fa-brands fa-windows mr-1.5 text-cyber-400"></i>Systèmes & Active Directory
+                </button>
+                <button data-filter="securite" class="skill-filter-btn px-4 py-2.5 rounded-xl text-sm font-semibold bg-navy-800 text-slate-300 hover:text-white border border-slate-700 transition">
+                    <i class="fa-solid fa-shield-halved mr-1.5 text-cyber-400"></i>Cybersécurité (ANSSI)
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" id="skills-grid">
+                <!-- Catégorie 1 : Systèmes -->
+                <div class="skill-card glass-card rounded-2xl p-6 sm:p-8 transition-all duration-300" data-category="systemes">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-cyber-400 text-lg">
+                                <i class="fa-brands fa-windows"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Systèmes & Administration</h3>
+                        </div>
+                        <span class="font-mono text-xs text-cyber-400 bg-cyber-500/10 px-2.5 py-1 rounded-md">Windows</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-200">Windows Server (2019 / 2022)</span>
+                                <span class="font-mono text-xs text-cyber-400">Avancé</span>
+                            </div>
+                            <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-cyber-500 to-blue-400 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-200">Active Directory (AD DS) & GPO</span>
+                                <span class="font-mono text-xs text-cyber-400">Avancé</span>
+                            </div>
+                            <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-cyber-500 to-blue-400 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-200">AppLocker & Durcissement Sécurité</span>
+                                <span class="font-mono text-xs text-cyber-400">Maîtrisé</span>
+                            </div>
+                            <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-cyber-500 to-blue-400 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-slate-800/80">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-950 text-slate-300 border border-slate-800">Windows Server</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-950 text-slate-300 border border-slate-800">AD DS</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-950 text-slate-300 border border-slate-800">GPO</span>
+                    </div>
+                </div>
+
+                <!-- Catégorie 2 : Cybersécurité ANSSI -->
+                <div class="skill-card glass-card rounded-2xl p-6 sm:p-8 transition-all duration-300" data-category="securite">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyber-400 text-lg">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Cybersécurité (ANSSI)</h3>
+                        </div>
+                        <span class="font-mono text-xs text-cyber-400 bg-cyber-500/10 px-2.5 py-1 rounded-md">SecNum</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-200">Panorama de la SSI</span>
+                                <span class="font-mono text-xs text-cyber-400">90.0%</span>
+                            </div>
+                            <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-cyber-400 to-teal-400 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-200">Sécurité de l'Authentification</span>
+                                <span class="font-mono text-xs text-cyber-400">90.0%</span>
+                            </div>
+                            <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-cyber-400 to-teal-400 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium text-slate-200">Sécurité sur Internet & Poste de travail</span>
+                                <span class="font-mono text-xs text-cyber-400">100%</span>
+                            </div>
+                            <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-cyber-400 to-teal-400 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-slate-800/80">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-950 text-slate-300 border border-slate-800">SecNumacadémie</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-950 text-slate-300 border border-slate-800">ANSSI</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-950 text-slate-300 border border-slate-800">SSI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section : Certifications (Ajouté selon demande) -->
+    <section id="certifications" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="font-mono text-xs uppercase tracking-widest text-cyber-400 bg-cyber-500/10 px-3 py-1 rounded-full border border-cyber-500/20">Validation Officielle</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4">Mes Certifications & Attestations</h2>
+                <p class="text-slate-400 mt-3">Consultez et téléchargez mes certifications obtenues en cybersécurité.</p>
+            </div>
+
+            <div class="grid md:grid-cols-1 max-w-2xl mx-auto reveal">
+                <!-- Certificat SecNumacadémie -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between border-t-4 border-t-cyber-400 space-y-6">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-cyber-500/15 text-cyber-400 font-mono text-xs border border-cyber-500/25">
+                                ATTESTATION OFFICIELLE • ANSSI
+                            </span>
+                            <span class="text-cyber-400 font-mono text-xs"><i class="fa-solid fa-calendar mr-1"></i> Février 2026</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">
+                            SecNumacadémie — ANSSI
+                        </h3>
+                        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                            Attestation de suivi avec succès des quatre modules de formation MOOC en Sécurité des Systèmes d'Information (SSI) délivrée par l'Agence Nationale de la Sécurité des Systèmes d'Information[cite: 16].
+                        </p>
+                        
+                        <div class="mt-6 space-y-2 text-xs font-mono bg-navy-950/70 p-4 rounded-xl border border-slate-800">
+                            <div class="flex justify-between border-b border-slate-800 pb-2">
+                                <span class="text-slate-400">Panorama de la SSI[cite: 16]</span>
+                                <span class="text-cyber-400 font-bold">90.0%[cite: 16]</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800 py-2">
+                                <span class="text-slate-400">Sécurité de l'Authentification[cite: 16]</span>
+                                <span class="text-cyber-400 font-bold">90.0%[cite: 16]</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800 py-2">
+                                <span class="text-slate-400">Sécurité sur Internet[cite: 16]</span>
+                                <span class="text-cyber-400 font-bold">100.0%[cite: 16]</span>
+                            </div>
+                            <div class="flex justify-between pt-2">
+                                <span class="text-slate-400">Sécurité du Poste de Travail et Nomadisme[cite: 16]</span>
+                                <span class="text-cyber-400 font-bold">92.0%[cite: 16]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-3">
+                        <button onclick="openDocumentModal('certif')" class="flex-1 py-3 rounded-xl bg-navy-800 hover:bg-cyber-500 text-white hover:text-navy-950 font-semibold text-sm transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-eye"></i> Visualiser la certification
+                        </button>
+                        <a href="./static/Certif.pdf" download class="px-5 py-3 rounded-xl bg-cyber-500 hover:bg-cyber-400 text-navy-950 font-bold text-sm transition flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down"></i> Télécharger (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4 : Projet GPO uniquement (Modifié selon consigne) -->
+    <section id="projets" class="py-20 bg-navy-900/40 border-y border-slate-800/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="font-mono text-xs uppercase tracking-widest text-cyber-400 bg-cyber-500/10 px-3 py-1 rounded-full border border-cyber-500/20">Portfolio Technique</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4">Projet Réalisé : GPO & Active Directory</h2>
+                <p class="text-slate-400 mt-3">Cliquez sur « Consulter la fiche projet » pour afficher les détails techniques et schémas.</p>
+            </div>
+
+            <div class="reveal">
+                <article class="glass-card rounded-2xl p-8 flex flex-col justify-between group cursor-pointer transition-all duration-300" onclick="openProjectModal(0)">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-lg bg-blue-500/15 text-cyber-400 font-mono text-xs border border-cyber-500/25">
+                                Réalisation E6 • GPO & Sécurité
+                            </span>
+                            <span class="text-slate-400 group-hover:text-cyber-400 transition">
+                                <i class="fa-solid fa-up-right-from-square"></i>
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-cyber-400 transition">
+                            Infrastructure Active Directory & Sécurité GPO / AppLocker
+                        </h3>
+                        <p class="text-slate-300 text-base mt-4 leading-relaxed">
+                            Mise en place d'un domaine Windows Server structuré en Unités d'Organisation (OU), gestion des habilitations et durcissement des postes clients via GPO et règles AppLocker.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-800/80">
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-md text-xs font-mono bg-navy-950 text-cyber-400 border border-slate-800">AD DS</span>
+                            <span class="px-3 py-1 rounded-md text-xs font-mono bg-navy-950 text-cyber-400 border border-slate-800">GPO</span>
+                            <span class="px-3 py-1 rounded-md text-xs font-mono bg-navy-950 text-cyber-400 border border-slate-800">AppLocker</span>
+                            <span class="px-3 py-1 rounded-md text-xs font-mono bg-navy-950 text-cyber-400 border border-slate-800">Windows Server</span>
+                        </div>
+                        <button class="w-full py-3.5 rounded-xl bg-navy-800/90 group-hover:bg-cyber-500 text-slate-200 group-hover:text-navy-950 font-semibold text-sm transition flex items-center justify-center gap-2">
+                            <span>Consulter la fiche projet GPO</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5 : Parcours & Expériences (Sans BTDC, Bac mis à jour Congo / Pointe-Noire) -->
+    <section id="parcours" class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="font-mono text-xs uppercase tracking-widest text-cyber-400 bg-cyber-500/10 px-3 py-1 rounded-full border border-cyber-500/20">Expériences & Formation</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4">Parcours Professionnel & Académique</h2>
+                <p class="text-slate-400 mt-3">Mon stage chez EF2i, mon cursus et mon parcours secondaire au Congo.</p>
+            </div>
+
+            <div class="relative border-l-2 border-cyber-500/30 ml-4 sm:ml-6 space-y-12 reveal">
+                <!-- Expérience 1 : EF2i -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-cyber-500 border-4 border-navy-950 shadow-lg shadow-cyber-500/50"></div>
+                    <div class="glass-card rounded-2xl p-6 sm:p-8">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <span class="px-3 py-1 rounded-full bg-cyber-500/15 text-cyber-400 font-mono text-xs font-semibold border border-cyber-500/30">
+                                Mai 2026 - Août 2026
+                            </span>
+                            <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-building mr-1.5 text-cyber-400"></i>Stage Entreprise</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Stagiaire Administrateur Systèmes & Réseaux</h3>
+                        <p class="text-cyber-400 font-semibold text-sm mt-0.5">EF2i</p>
+                        
+                        <ul class="mt-4 space-y-2.5 text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-angle-right text-cyber-400 mt-1"></i>
+                                <span>Administration de serveurs Windows en environnement professionnel.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-angle-right text-cyber-400 mt-1"></i>
+                                <span>Gestion des utilisateurs et groupes via Active Directory (AD DS).</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-angle-right text-cyber-400 mt-1"></i>
+                                <span>Mise en place de stratégies de sécurité via Group Policy (GPO).</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Formation : BTS SIO SISR -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-indigo-400 border-4 border-navy-950"></div>
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 border-indigo-500/20">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-300 font-mono text-xs font-semibold border border-indigo-400/30">
+                                Cursus Supérieur • Bac+2
+                            </span>
+                            <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-graduation-cap mr-1.5 text-indigo-400"></i>Formation</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">BTS SIO — Option SISR</h3>
+                        <p class="text-indigo-300 font-semibold text-sm mt-0.5">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+                        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+                            Acquisition des compétences en administration système, support technique, gestion de parc et sécurisation des environnements informatiques.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Baccalauréat (Pointe-Noire, Congo) -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-amber-400 border-4 border-navy-950"></div>
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 border-amber-500/20">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 font-mono text-xs font-semibold border border-amber-400/30">
+                                Diplôme Secondaire • Congo
+                            </span>
+                            <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-certificate mr-1.5 text-amber-400"></i>Pointe-Noire</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Baccalauréat Général</h3>
+                        <p class="text-amber-300 font-semibold text-sm mt-0.5">Light World School — Pointe-Noire (Congo)</p>
+                        <p class="mt-3 text-sm text-slate-300">
+                            Obtention du Baccalauréat au sein de l'Université / Lycée Light World School à Pointe-Noire, marquant la validation du cycle secondaire avant l'enseignement supérieur en informatique.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6 : Épreuves E5 / E6 & Rapport de stage (EF2i uniquement) -->
+    <section id="examens" class="py-20 bg-navy-900/40 border-y border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="font-mono text-xs uppercase tracking-widest text-cyber-400 bg-cyber-500/10 px-3 py-1 rounded-full border border-cyber-500/20">Certification BTS SIO</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4">Épreuves E5 / E6 & Rapport de Stage EF2i</h2>
+                <p class="text-slate-400 mt-3">Documentation officielle des épreuves et intégration des PDF Active Directory, GLPI et du rapport de stage.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 reveal">
+                <!-- Épreuve E5 -->
+                <div class="glass-card rounded-2xl p-7 flex flex-col justify-between border-t-4 border-t-cyber-400">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-mono text-sm font-bold text-cyber-400">ÉPREUVE E5</span>
+                            <i class="fa-solid fa-list-check text-cyber-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Support et mise à disposition de services informatiques</h3>
+                        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                            Validation des compétences de gestion du parc informatique (GLPI) et support aux utilisateurs.
+                        </p>
+                    </div>
+                    <button onclick="openDocumentModal('e5')" class="mt-6 w-full py-3 rounded-xl bg-navy-800 hover:bg-cyber-500 text-white hover:text-navy-950 font-semibold text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-eye"></i> Voir le tableau de synthèse E5
+                    </button>
+                </div>
+
+                <!-- Épreuve E6 (SISR) avec PDF Active Directory et GLPI -->
+                <div class="glass-card rounded-2xl p-7 flex flex-col justify-between border-t-4 border-t-indigo-400">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-mono text-sm font-bold text-indigo-300">ÉPREUVE E6 (SISR)</span>
+                            <i class="fa-solid fa-server text-indigo-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Administration des systèmes et des réseaux</h3>
+                        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                            Présentation des projets professionnels E6 (Active Directory et GLPI).
+                        </p>
+                    </div>
+                    <div class="mt-6 space-y-2">
+                        <button onclick="openDocumentModal('e6')" class="w-full py-3 rounded-xl bg-navy-800 hover:bg-indigo-400 text-white hover:text-navy-950 font-semibold text-sm transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-eye"></i> Consulter les fiches E6
+                        </button>
+                        <div class="grid grid-cols-2 gap-2 pt-1">
+                            <a href="${getStaticAssetUrl("Dossier de Projet E6 - Active Directory - BAKABADIO Emmanuel.pdf")}" download class="py-2 px-2 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 font-semibold text-xs transition flex items-center justify-center gap-1.5 text-center">
+                                <i class="fa-solid fa-file-arrow-down"></i> PDF Active Directory
+                            </a>
+                            <a href="${getStaticAssetUrl("Dossier de Projet E6 - GLPI - BAKABADIO Emmanuel.pdf")}" download class="py-2 px-2 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 font-semibold text-xs transition flex items-center justify-center gap-1.5 text-center">
+                                <i class="fa-solid fa-file-arrow-down"></i> PDF GLPI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rapport de stage EF2i -->
+                <div class="glass-card rounded-2xl p-7 flex flex-col justify-between border-t-4 border-t-emerald-400">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-mono text-sm font-bold text-emerald-400">RAPPORT DE STAGE</span>
+                            <i class="fa-solid fa-file-pdf text-emerald-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Stage Entreprise — EF2i</h3>
+                        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                            Compte-rendu détaillé de mon stage d'administrateur systèmes et réseaux chez EF2i (Mai - Août 2026).
+                        </p>
+                    </div>
+                    <div class="mt-6 space-y-2">
+                        <button onclick="openDocumentModal('stage')" class="w-full py-3 rounded-xl bg-navy-800 hover:bg-emerald-400 text-white hover:text-navy-950 font-semibold text-sm transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-book-open"></i> Lire la synthèse de stage
+                        </button>
+                        <a href="./static/Rapport%20de%20stage%20.pdf" download class="w-full py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold text-xs transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down"></i> Télécharger le Rapport (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7 : Contact -->
+    <section id="contact" class="py-20 bg-navy-900/50 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="font-mono text-xs uppercase tracking-widest text-cyber-400 bg-cyber-500/10 px-3 py-1 rounded-full border border-cyber-500/20">Échangeons ensemble</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-4">Me Contacter</h2>
+                <p class="text-slate-400 mt-3">À la recherche d'une opportunité en administration systèmes et réseaux ? Contactez-moi directement.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 reveal">
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="glass-card rounded-2xl p-6 space-y-6">
+                        <h3 class="text-xl font-bold text-white">Coordonnées directes</h3>
+                        
+                        <a href="mailto:Donbakabadio@icloud.com" class="flex items-center gap-4 p-4 rounded-xl bg-navy-950/70 border border-slate-800 hover:border-cyber-500/50 transition group">
+                            <div class="w-12 h-12 rounded-xl bg-cyber-500/15 flex items-center justify-center text-cyber-400 text-lg group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <div class="text-xs font-mono text-slate-400">Email professionnel</div>
+                                <div class="text-white font-semibold truncate group-hover:text-cyber-400 transition">Donbakabadio@icloud.com</div>
+                            </div>
+                        </a>
+
+                        <a href="tel:+33743589837" class="flex items-center gap-4 p-4 rounded-xl bg-navy-950/70 border border-slate-800 hover:border-cyber-500/50 transition group">
+                            <div class="w-12 h-12 rounded-xl bg-cyber-500/15 flex items-center justify-center text-cyber-400 text-lg group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-mono text-slate-400">Téléphone</div>
+                                <div class="text-white font-semibold group-hover:text-cyber-400 transition">07 43 58 98 37</div>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-navy-950/70 border border-slate-800">
+                            <div class="w-12 h-12 rounded-xl bg-cyber-500/15 flex items-center justify-center text-cyber-400 text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-mono text-slate-400">Localisation</div>
+                                <div class="text-white font-semibold">Paris 15e, France</div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button onclick="copyEmail()" class="w-full py-3 rounded-xl bg-navy-800 hover:bg-navy-700 text-slate-200 border border-slate-700 text-sm font-medium transition flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-copy text-cyber-400"></i>
+                                <span id="copy-email-text">Copier mon adresse email</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="glass-card rounded-2xl p-6 sm:p-8 space-y-5">
+                        <h3 class="text-xl font-bold text-white">Envoyer un message</h3>
+                        
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-300 mb-1.5">Nom complet *</label>
+                                <input type="text" id="name" name="name" required placeholder="Ex: Jean Dupont"
+                                    class="w-full px-4 py-3 rounded-xl bg-navy-950/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-400 transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-300 mb-1.5">Adresse email *</label>
+                                <input type="email" id="email" name="email" required placeholder="jean.dupont@entreprise.fr"
+                                    class="w-full px-4 py-3 rounded-xl bg-navy-950/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-400 transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-slate-300 mb-1.5">Objet du message *</label>
+                            <select id="subject" name="subject" required
+                                class="w-full px-4 py-3 rounded-xl bg-navy-950/80 border border-slate-700 text-white focus:outline-none focus:border-cyber-400 transition">
+                                <option value="Opportunité professionnelle">Proposition d'opportunité / Emploi</option>
+                                <option value="Entretien / Recrutement">Demande d'entretien</option>
+                                <option value="Échange technique / BTS SIO">Question sur mes projets ou épreuves E5/E6</option>
+                                <option value="Autre demande">Autre demande</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-300 mb-1.5">Message *</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Bonjour Emmanuel, je souhaiterais échanger avec vous concernant..."
+                                class="w-full px-4 py-3 rounded-xl bg-navy-950/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-400 transition"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-cyber-500 hover:bg-cyber-400 text-navy-950 font-bold text-base transition shadow-lg shadow-cyber-500/20 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Envoyer le message
+                        </button>
+
+                        <div id="form-feedback" class="hidden p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 text-sm flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-lg mt-0.5"></i>
+                            <div>
+                                <p class="font-semibold">Message envoyé avec succès !</p>
+                                <p class="text-xs text-emerald-200/80 mt-0.5">Merci pour votre message. Emmanuel BAKABADIO vous répondra rapidement.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 border-t border-slate-800/80 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-cyber-500 flex items-center justify-center text-navy-950 font-bold text-sm">EB</div>
+                <span class="text-sm text-slate-400">© 2026 <strong class="text-white">Emmanuel BAKABADIO</strong> — Portfolio BTS SIO SISR.</span>
+            </div>
+            <div class="flex items-center space-x-6 text-sm text-slate-400">
+                <a href="#accueil" class="hover:text-cyber-400 transition">Haut de page <i class="fa-solid fa-arrow-up ml-1"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modale interactive avec Visionneuse PDF Intégrée -->
+    <div id="modal-backdrop" class="fixed inset-0 z-50 hidden bg-navy-950/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div id="modal-container" class="glass-card bg-navy-900 border border-cyber-500/40 rounded-2xl max-w-4xl w-full p-6 sm:p-8 relative shadow-2xl my-8 transform transition-all">
+            <button onclick="closeModal()" aria-label="Fermer la fenêtre" class="absolute top-5 right-5 w-10 h-10 rounded-xl bg-navy-800 hover:bg-rose-500/20 text-slate-300 hover:text-rose-400 flex items-center justify-center transition z-10">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Contenu injecté dynamiquement -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tous les fichiers locaux du portfolio sont servis depuis ./static/.
+        // Le chemin reste relatif à cette page, même si le portfolio est hébergé dans un sous-dossier.
+        const STATIC_DIRECTORY_URL = new URL('./static/', document.baseURI);
+
+        function getStaticAssetUrl(fileName) {
+            const encodedFileName = fileName
+                .split('/')
+                .map((part) => encodeURIComponent(part))
+                .join('/');
+
+            return new URL(encodedFileName, STATIC_DIRECTORY_URL).href;
+        }
+
+        // Données du projet GPO unique
+        const projectsData = [
+            {
+                badge: "Réalisation E6 • Administration Système",
+                title: "Infrastructure Active Directory & Sécurité GPO / AppLocker",
+                context: "Dans le cadre de l'épreuve E6, mise en place d'un domaine Windows Server centralisé pour structurer les comptes utilisateurs, automatiser les configurations et sécuriser l'exécution des applications.",
+                objectives: [
+                    "Installer et promouvoir un contrôleur de domaine Active Directory (AD DS).",
+                    "Créer une arborescence d'Unités d'Organisation (OU) par service.",
+                    "Déployer des GPO de configuration et de sécurité.",
+                    "Restreindre les applications non autorisées avec AppLocker."
+                ],
+                steps: [
+                    "Étape 1 : Installation du rôle AD DS et configuration IP statique.",
+                    "Étape 2 : Création des groupes et utilisateurs (modèle AGDLP).",
+                    "Étape 3 : Édition et liaison des GPO (politique de mots de passe, scripts de démarrage).",
+                    "Étape 4 : Configuration des règles AppLocker par éditeur et chemin sécurisé."
+                ],
+                results: "Architecture centralisée opérationnelle, protection renforcée des postes de travail contre les logiciels non signés.",
+                screenshots: [
+                    { title: "Arborescence Active Directory (DSA.msc)", desc: "Vue des Unités d'Organisation et des comptes utilisateurs par département." },
+                    { title: "Éditeur de Gestion de Stratégie de Groupe (GPMC)", desc: "Application des politiques de sécurité et des scripts de mappage lecteur." },
+                    { title: "Console AppLocker", desc: "Règles de listes blanches sur les exécutables et scripts autorisés." }
+                ],
+                tags: ["Windows Server", "AD DS", "GPO", "AppLocker"]
+            }
+        ];
+
+        // Documents avec visionneuse PDF intégrée (iframe)
+        const documentsData = {
+            cv: {
+                badge: "Curriculum Vitae",
+                title: "Curriculum Vitae — Emmanuel BAKABADIO",
+                pdfFile: "CV Alt Emmanuel BAKABADIO.pdf"
+            },
+            certif: {
+                badge: "Attestation ANSSI",
+                title: "Attestation SecNumacadémie — Emmanuel BAKABADIO",
+                pdfFile: "Certif.pdf"
+            },
+            e5: {
+                badge: "Référentiel BTS SIO • Bloc 1",
+                title: "Épreuve E5 — Support et mise à disposition de services informatiques",
+                html: `
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <p>Validation des compétences du bloc 1 à travers les situations professionnelles vécues :</p>
+                        <div class="space-y-3">
+                            <div class="p-4 rounded-xl bg-navy-950/80 border border-slate-800">
+                                <h4 class="text-cyber-400 font-semibold">1. Gestion du patrimoine informatique</h4>
+                                <p class="text-xs mt-1">Inventaire des actifs matériels et logiciels, gestion des habilitations utilisateurs.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-navy-950/80 border border-slate-800">
+                                <h4 class="text-cyber-400 font-semibold">2. Réponse aux incidents et demandes d'assistance</h4>
+                                <p class="text-xs mt-1">Support technique N1/N2 et résolution de pannes informatiques.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-navy-950/80 border border-slate-800">
+                                <h4 class="text-cyber-400 font-semibold">3. Mise à disposition de services informatiques</h4>
+                                <p class="text-xs mt-1">Industrialisation et déploiement de postes clients Windows.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            e6: {
+                badge: "Référentiel BTS SIO • Option SISR",
+                title: "Épreuve E6 — Administration des systèmes et des réseaux",
+                html: `
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <p>Présentation des réalisations professionnelles majeures de l'option SISR (Active Directory, DHCP/DNS, GPO) :</p>
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 rounded-xl bg-navy-950/80 border border-indigo-500/30 space-y-3">
+                                <h4 class="text-white font-bold text-sm">Dossier Active Directory</h4>
+                                <p class="text-xs text-slate-300">Infrastructure AD DS, DHCP/DNS sur pfSense, GPO de sécurité.</p>
+                                <a href="${getStaticAssetUrl("Dossier de Projet E6 - Active Directory - BAKABADIO Emmanuel.pdf")}" download class="block w-full py-2 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 text-center font-semibold text-xs transition">
+                                    <i class="fa-solid fa-file-arrow-down mr-1"></i> Télécharger le PDF AD
+                                </a>
+                            </div>
+                            <div class="p-4 rounded-xl bg-navy-950/80 border border-indigo-500/30 space-y-3">
+                                <h4 class="text-white font-bold text-sm">Dossier GLPI</h4>
+                                <p class="text-xs text-slate-300">Solution ITSM, intégration LDAP et déploiement agent par GPO.</p>
+                                <a href="${getStaticAssetUrl("Dossier de Projet E6 - GLPI - BAKABADIO Emmanuel.pdf")}" download class="block w-full py-2 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 text-center font-semibold text-xs transition">
+                                    <i class="fa-solid fa-file-arrow-down mr-1"></i> Télécharger le PDF GLPI
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            stage: {
+                badge: "Rapport de Stage Exclusif",
+                title: "Rapport de Stage Académique — EF2i",
+                pdfFile: "Rapport de stage .pdf"
+            }
+        };
+
+        // Ouvrir modale projet
+        function openProjectModal(index) {
+            const project = projectsData[index];
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <span class="px-3 py-1 rounded-lg bg-cyber-500/15 text-cyber-400 font-mono text-xs border border-cyber-500/30">
+                    ${project.badge}
+                </span>
+                <h3 class="text-2xl font-bold text-white mt-3 pr-8">${project.title}</h3>
+                
+                <div class="mt-5 space-y-6 text-sm sm:text-base text-slate-300">
+                    <div>
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-cyber-400 mb-1.5">1. Contexte & Problématique</h4>
+                        <p class="leading-relaxed bg-navy-950/60 p-4 rounded-xl border border-slate-800">${project.context}</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-cyber-400 mb-1.5">2. Objectifs</h4>
+                        <ul class="space-y-1.5 pl-1">
+                            ${project.objectives.map(obj => `<li class="flex items-start gap-2"><i class="fa-solid fa-bullseye text-cyber-400 mt-1 text-xs"></i><span>${obj}</span></li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-cyber-400 mb-1.5">3. Étapes de Réalisation</h4>
+                        <ul class="space-y-2 pl-1">
+                            ${project.steps.map(step => `<li class="flex items-start gap-2.5 text-xs sm:text-sm bg-navy-950/40 p-2.5 rounded-lg border border-slate-800/80"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i><span>${step}</span></li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-cyber-400 mb-2">4. Captures d'écran & Schémas Techniques</h4>
+                        <div class="grid sm:grid-cols-3 gap-4">
+                            ${project.screenshots.map(sc => `
+                                <div class="bg-navy-950/80 p-3.5 rounded-xl border border-slate-800 space-y-2">
+                                    <div class="h-28 rounded-lg bg-navy-900 border border-slate-700/80 flex items-center justify-center text-center p-2 text-xs font-mono text-cyber-400 shadow-inner">
+                                        <i class="fa-solid fa-image text-lg mr-1.5 opacity-60"></i> [Capture / Schéma]
+                                    </div>
+                                    <h5 class="text-xs font-bold text-white truncate">${sc.title}</h5>
+                                    <p class="text-[11px] text-slate-400 leading-tight">${sc.desc}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-emerald-400 mb-1">5. Résultats & Validation</h4>
+                        <p class="text-emerald-100 text-sm">${project.results}</p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        ${project.tags.map(tag => `<span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-950 text-cyber-400 border border-slate-800">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            document.getElementById('modal-backdrop').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Ouvrir modale documentaire (avec affichage PDF via iframe ou contenu HTML)
+        function openDocumentModal(docKey) {
+            const doc = documentsData[docKey];
+            const modalContent = document.getElementById('modal-content');
+
+            if (!doc) {
+                console.warn(`Document inconnu : ${docKey}`);
+                return;
+            }
+
+            const pdfUrl = doc.pdfFile ? getStaticAssetUrl(doc.pdfFile) : null;
+
+            if (pdfUrl) {
+                modalContent.innerHTML = `
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <div>
+                            <span class="px-3 py-1 rounded-lg bg-cyber-500/15 text-cyber-400 font-mono text-xs border border-cyber-500/30">
+                                ${doc.badge}
+                            </span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-white mt-2">${doc.title}</h3>
+                        </div>
+                        <a href="${pdfUrl}" download class="px-4 py-2.5 rounded-xl bg-cyber-500 hover:bg-cyber-400 text-navy-950 font-bold text-xs transition flex items-center gap-2 shadow-md">
+                            <i class="fa-solid fa-file-arrow-down"></i> Télécharger le PDF
+                        </a>
+                    </div>
+                    <div class="w-full h-[65vh] rounded-xl overflow-hidden border border-slate-700 bg-navy-950">
+                        <iframe src="${pdfUrl}" title="Aperçu de ${doc.title}" class="w-full h-full" type="application/pdf" loading="lazy">
+                            <p class="p-6 text-center text-slate-300">Votre navigateur ne prend pas en charge l'affichage direct des PDF. Vous pouvez le télécharger via le bouton ci-dessus.</p>
+                        </iframe>
+                    </div>
+                `;
+            } else {
+                modalContent.innerHTML = `
+                    <span class="px-3 py-1 rounded-lg bg-cyber-500/15 text-cyber-400 font-mono text-xs border border-cyber-500/30">
+                        ${doc.badge}
+                    </span>
+                    <h3 class="text-2xl font-bold text-white mt-3 mb-5 pr-8">${doc.title}</h3>
+                    ${doc.html}
+                `;
+            }
+            document.getElementById('modal-backdrop').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal-backdrop').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modal-backdrop').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Menu Mobile Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Effet Navbar au scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 30) {
+                navbar.classList.add('bg-navy-950/90', 'backdrop-blur-xl', 'border-slate-800/80', 'shadow-lg');
+                navbar.classList.remove('border-transparent');
+            } else {
+                navbar.classList.remove('bg-navy-950/90', 'backdrop-blur-xl', 'border-slate-800/80', 'shadow-lg');
+                navbar.classList.add('border-transparent');
+            }
+        });
+
+        // Filtrage des compétences
+        const filterButtons = document.querySelectorAll('.skill-filter-btn');
+        const skillCards = document.querySelectorAll('.skill-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-cyber-500', 'text-navy-950');
+                    b.classList.add('bg-navy-800', 'text-slate-300', 'border', 'border-slate-700');
+                });
+                btn.classList.remove('bg-navy-800', 'text-slate-300', 'border', 'border-slate-700');
+                btn.classList.add('bg-cyber-500', 'text-navy-950');
+
+                const filter = btn.getAttribute('data-filter');
+                skillCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Copie email
+        function copyEmail() {
+            const tempInput = document.createElement('input');
+            tempInput.value = 'Donbakabadio@icloud.com';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const label = document.getElementById('copy-email-text');
+            label.textContent = 'Adresse copiée dans le presse-papiers !';
+            setTimeout(() => {
+                label.textContent = 'Copier mon adresse email';
+            }, 2500);
+        }
+
+        // Formulaire de contact
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('form-feedback');
+            feedback.classList.remove('hidden');
+            this.reset();
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 6000);
+        });
+
+        // Animations d'apparition
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
